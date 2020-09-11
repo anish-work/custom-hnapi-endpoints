@@ -1,5 +1,5 @@
 # custom-hnapi-endpoints
-Custom endpoints for Hacker News API.
+Custom endpoints for [**Hacker News API**](https://github.com/HackerNews/API)
  
  
 ## Endpoints 
@@ -37,7 +37,7 @@ Contains all the route files to the server endpoints and each file is responsibl
 Default **express router** is being used for routing.
 
 ## /src/hnapi
-Contains all the files that interact with [**Hacker News**](http://hackernews.com) API.
+Contains all the files that interact with [**Hacker News API**](https://github.com/HackerNews/API).
 #### /hnapi/utilHnApi.js
 It handles the fundamental API calls from the Hacker News API. Functions from this file are covered in the test coverage, and they are used as utility functions for other internal APIs.
 #### /hnapi/storiesApi.js
