@@ -69,7 +69,7 @@ async function getCommentDetails(commentArray) {
 //
 //
 //
-//H I G H E S T  O R D E R  F U N C T I O N
+//T O P  L E V E L  F U N C T I O N
 
 //Fetch top <param2> number of Parent comments from <param1> story id
 export async function getTopParentComments(id, num) {

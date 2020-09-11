@@ -1,4 +1,5 @@
 import axios from "axios";
+import { calculateAge } from "../utilFuncs";
 
 //API URL
 const baseUrl = "https://hacker-news.firebaseio.com/v0/";
@@ -50,24 +51,6 @@ export async function userHnAge(username) {
 
   //Convert from Unix format to normal
   const joinDate = new Date(created * 1000);
-  const joinMonth = joinDate.getMonth();
-  const joinYear = joinDate.getFullYear();
-
-  //Get current date for calculation
-  const today = new Date();
-  const todayMonth = today.getMonth();
-  const todayYear = today.getFullYear();
-
-  //If joinMonth > todayMonth then do this
-  return `${
-    todayYear - joinYear > 1
-      ? todayYear - joinYear + "Years"
-      : todayYear - joinYear + "Year"
-  } ${
-    joinMonth > todayMonth
-      ? 12 - (joinMonth - todayMonth)
-      : todayMonth - joinMonth
-  } months`;
-
-  //Should return 'X years Y months'
+  //Calculate the age using function
+  return calculateAge(joinDate);
 }

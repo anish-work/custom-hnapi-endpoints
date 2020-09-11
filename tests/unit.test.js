@@ -1,4 +1,4 @@
-import { keyValueReducer, sortByKey } from "../src/utilFuncs";
+import { calculateAge, keyValueReducer, sortByKey } from "../src/utilFuncs";
 import { reducedKeysStories, stories } from "./testData";
 
 describe("Logic tests", () => {
@@ -13,5 +13,9 @@ describe("Logic tests", () => {
     let arr2 = keyValueReducer(stories);
     expect(arr2).toEqual(reducedKeysStories);
     //In input there were was some extra keys present in objects
+  });
+  test("Age is calculated right", () => {
+    let date = new Date();
+    expect(calculateAge(date)).toMatch(`0 Years 0 Months`);
   });
 });

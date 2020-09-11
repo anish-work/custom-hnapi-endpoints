@@ -29,3 +29,23 @@ export function sortByKey(array, key, length) {
     throw new Error("Can not sort empty array");
   }
 }
+
+//Calculates the age from given <param> date but it should in JS Date format
+export function calculateAge(inputDate) {
+  //Get current date for calculation
+  const today = new Date();
+  const todayMonth = today.getMonth();
+  const todayYear = today.getFullYear();
+
+  const inputMonth = inputDate.getMonth();
+  const inputYear = inputDate.getFullYear();
+
+  const ageYears = todayYear - inputYear;
+  const ageMonth =
+    inputMonth > todayMonth
+      ? 12 - (inputMonth - todayMonth)
+      : todayMonth - inputMonth;
+  return `${
+    ageYears === 1 ? ageYears + " Year" : ageYears + " Years"
+  } ${ageMonth} Months`;
+}
