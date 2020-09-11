@@ -8,12 +8,20 @@ Custom endpoints for Hacker News API.
 3. /past-stories — returns all the past top stories that were served previously.
 
 
-#### Code Walk-through  
-## /src/app.js
+# Code Walk-through  
+## /src
+#### /src/app.js
 Main Express.js app instance
 
-### /src/server.js
+#### /src/server.js
 Initialize the server on the given port. (if it doesn't start prefer to make .env or just change the variable value)
+
+#### /src/utilFuncs.js
+Contains the small logic functions that are being used in multiple APIs throughout the code.
+
+#### /src/caches.js
+Contains a datastore(Redis) which caches the data to save the number of Api calls and flush the data out the cache after some specified time in API but takes a snapshot before flushing.
+
 ## /src/routes 
 Contains all the route files to the server endpoints and each file is responsible for handling one endpoint.
 Default **express router** is being used for routing.
@@ -27,8 +35,6 @@ Contains the API which is invoked by the middleware function in **/routes/topSto
 #### /hnapi/commentsApi.js
 Contains the API which is invoked by the middleware function in **/routes/comments.js**
 
-##src/utilFuncs.js
-Contains the small logic functions that are being used in multiple APIs throughout the code.
 
-## / src/caches.js
-Contains a datastore(Redis) which caches the data to save the number of Api calls and flush the data out the cache after some specified time in API but takes a snapshot before flushing.
+## /src/test
+Files responsible for test coverage using jest. To start the test use jest command or to check coverage use jest --coverage command.
