@@ -1,4 +1,4 @@
-# custom-hnpi-endpoints
+# custom-hnapi-endpoints
 Custom endpoints for Hacker News API.
  
  
