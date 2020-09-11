@@ -35,6 +35,5 @@ Contains the API which is invoked by the middleware function in **/routes/topSto
 #### /hnapi/commentsApi.js
 Contains the API which is invoked by the middleware function in **/routes/comments.js**
 
-
 ## /src/test
 Files responsible for test coverage using jest. To start the test use jest command or to check coverage use jest --coverage command.

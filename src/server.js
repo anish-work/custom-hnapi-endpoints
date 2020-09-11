@@ -1,7 +1,14 @@
 import { app } from "./app";
+import { flushAll } from "./cache";
 
 const SERVER_PORT = process.env.SERVER_PORT || 3000;
 //Run the Server
-app.listen(SERVER_PORT, () => {
+const server = app.listen(SERVER_PORT, () => {
   console.log(`Listening on port ${SERVER_PORT}`);
+});
+
+// catching signals and do something before exit
+process.on("SIGINT", () => {
+  flushAll();
+  server.close();
 });

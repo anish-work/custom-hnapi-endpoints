@@ -38,3 +38,9 @@ export async function getFromCache(key) {
   }
   if (output) return JSON.parse(output);
 }
+
+//Flush all the data of the cache
+export function flushAll() {
+  console.log("cache flushed");
+  client.flushdb();
+}
