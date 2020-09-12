@@ -17,6 +17,7 @@ export function keyValueReducer(array) {
 }
 //Helper function: Sort <param1> array by <param2> key and returns an array of <param3> length
 export function sortByKey(array, key, length) {
+  console.log("Sorting the array");
   if (array) {
     array.sort((a, b) => b[key] - a[key]);
     let result = [];
@@ -32,6 +33,7 @@ export function sortByKey(array, key, length) {
 
 //Calculates the age from given <param> date but it should in JS Date format
 export function calculateAge(inputDate) {
+  console.log("Calculating user age");
   //Get current date for calculation
   const today = new Date();
   const todayMonth = today.getMonth();

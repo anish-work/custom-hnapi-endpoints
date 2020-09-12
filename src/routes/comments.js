@@ -12,6 +12,7 @@ async function commentsMiddleware(req, res) {
     console.log("Fetched completed from comments Api");
     res.send(response);
   } catch (e) {
+    console.log(e.message);
     res.send("Server error, Please try again!");
   }
 }

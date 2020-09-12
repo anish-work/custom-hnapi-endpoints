@@ -45,7 +45,6 @@ export async function getUser(username) {
 
 //Calculates given <param> user's  "HN Age"
 export async function userHnAge(username) {
-  console.log("Calculating user age");
   //Fetch user details and destructure created timestamp
   const { created } = await getUser(username);
 
