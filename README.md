@@ -13,7 +13,7 @@ Custom endpoints for [**Hacker News API**](https://github.com/HackerNews/API)
 1. Assuming you already have docker, Run **docker run redis** .
 2. Run **docker-compose up -d** .
 
-### NORMAL WAY (hectic)
+### Normal Way (hectic)
 1. Run **npm install** or **yarn add \*** to install all the dependencies.
 2. Before doing anything please install Redis on your machine using this [Link](https://redis.io/download), as I used Redis cluster to cache the data .
 2. After installing is complete if you want to test use **jest** command to test all the test suites.
