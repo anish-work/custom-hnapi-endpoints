@@ -30,7 +30,6 @@ export function sortByKey(array, key, length) {
     throw new Error("Can not sort empty array");
   }
 }
-
 //Calculates the age from given <param> date but it should in JS Date format
 export function calculateAge(inputDate) {
   console.log("Calculating user age");
