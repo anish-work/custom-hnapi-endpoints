@@ -7,7 +7,7 @@ const server = app.listen(SERVER_PORT, () => {
   console.log(`Listening on port ${SERVER_PORT}`);
 });
 
-//catching signals and do something before exit
+//catching signals and flush the cache before closing
 process.on("SIGINT", () => {
   flushAll();
   server.close();

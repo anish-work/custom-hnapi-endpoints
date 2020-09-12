@@ -2,9 +2,14 @@ import redis from "redis";
 import "dotenv/config";
 import { promisify } from "util";
 
+
+
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 
-const client = redis.createClient(REDIS_PORT);
+const client = redis.createClient({
+  host: 'redis-server',
+  port: REDIS_PORT
+})
 
 //Redis do not support promises so util.promisify used to wait for data retrieval
 const asyncGet = promisify(client.get).bind(client);

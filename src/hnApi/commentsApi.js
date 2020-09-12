@@ -4,7 +4,7 @@ import { sortByKey } from "../utilFuncs";
 //Count all the children
 async function countChildren(itemId, result) {
   result.count += 1;
-  
+  console.log(`fetching details for ${itemId}`)
   let item = await getItemById(itemId);
   
   if (item.kids && !item.deleted) {
@@ -19,17 +19,19 @@ async function countChildren(itemId, result) {
 
 //Fetch top <param2> number of Parent comments from <param1> story id
 export async function getTopParentComments(id, num) {
-  console.log("Requesting Comments API");
+
   //Fetch Story Detail from hnApi
   const story = await getItemById(id);
   if (story.type !== "story")
     return "Given item ID is not a story, please input a valid story ID";
   //Performance measure
-  let s = performance.now();
 
-  let parents = await Promise.all(story.kids.map(async function(x) {
+
+  let parents = await Promise.all(story.kids.map(async function(comment) {
+
       let result = {count: -1};
-      let item = await countChildren(x, result);
+      let item = await countChildren(comment, result);
+      
       return {
         id:item.id,
         childCount: result.count,
@@ -42,11 +44,9 @@ export async function getTopParentComments(id, num) {
   await Promise.all(parents.map(async (item) => {
     item.hnAge = await userHnAge(item.author);
   }));
-
   if(story.kids.length > 10){
     return sortByKey(parents, 'childCount', num);
   }else{
     return sortByKeyFN(parents, 'childCount', story.kids.length);
   }
-  
 }
