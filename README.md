@@ -10,8 +10,8 @@ Custom endpoints for [**Hacker News API**](https://github.com/HackerNews/API)
 
 ## **Get it up and running**
 ### Docker Conatainer 
-1. Assuming you already have docker, Run **docker run redis** .
-2. Run **docker-compose up -d** .
+1. Assuming you already have docker, Run **docker run redis** 
+2. Run **docker-compose up -d** 
 
 ### Normal Way (hectic)
 1. Run **npm install** or **yarn add \*** to install all the dependencies.
