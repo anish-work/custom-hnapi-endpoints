@@ -14,7 +14,7 @@ Custom endpoints for [**Hacker News API**](https://github.com/HackerNews/API)
 
 ### Normal Way (hectic)
 1. Run **npm install** or **yarn add \*** to install all the dependencies.
-2. Before doing anything please install Redis on your machine using this [Link](https://redis.io/download), as I used Redis cluster to cache the data .
+2. Before doing anything please install Redis on your machine using this [Link](https://redis.io/download), as I used Redis as data store to cache the data .
 2. After installing is complete if you want to test use **jest** command to test all the test suites.
 3. Then just hit the **npm start** or **yarn start** command to get the server up and running.
 4. Send a get request using browser or curl on [http://localhost:300/top-stories](http://localhost:300/top-stories), you wil recieve a response with top 10 stories sorted by the highest score.
